@@ -30,10 +30,14 @@ class CardGame
 end
 end
 
+# self not going red - Atom bug? maybe because this class has no initialise method?
 def self.cards_total(cards)
+  # uninitialised variable - should be total = 0
   total
   for card in cards
     total += card.value
+    # return should be outside for loop, otherwise will print this statement for every card
+    # total hasn't been converted to a string
     return "You have a total of" + total
   end
 end
