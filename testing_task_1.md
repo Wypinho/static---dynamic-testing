@@ -31,14 +31,16 @@ class CardGame
 end
 end
 
+# wrong indentation
 def self.cards_total(cards)
   # uninitialised variable - should be total = 0
   total
   for card in cards
     total += card.value
-    # return should be outside for loop, otherwise will print this statement for every card
+    # return should be outside for loop, otherwise will print this statement for every card. Also missing a space before total.
     # total hasn't been converted to a string
     return "You have a total of" + total
   end
+  # missing an end for the method
 end
 ```
