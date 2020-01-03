@@ -10,7 +10,8 @@ class TestCardGame < Minitest::Test
     @card1 = Card.new("clubs", 3)
     @card2 = Card.new("hearts", 13)
     @card3 = Card.new("diamonds", 1)
-    @cards = [@card1, @card2, @card3]
+    @card4 = Card.new("spades", 13)
+    @cards = [@card1, @card2, @card3, @card4]
   end
 
   def test_card_has_suit
@@ -26,10 +27,14 @@ class TestCardGame < Minitest::Test
   end
 
   def test_highest_card
-    assert_equal(@card2, highest_card(@card1, @card2))
+    assert_equal(@card2, CardGame.highest_card(@card1, @card2))
+  end
+
+  def test_highest_card__equal_value_cards
+    assert_equal("The cards are of equal value", CardGame.highest_card(@card2, @card4))
   end
 
   def test_cards_total
-    assert_equal(17, cards_total(@cards))
+    assert_equal(30, cards_total(@cards))
   end
 end

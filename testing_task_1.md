@@ -21,7 +21,7 @@ class CardGame
   dif highest_card(card1 card2)
   # should be indented
   if card1.value > card2.value
-    # non-existant variable, should be card 1
+    # non-existant variable, should be card1
     return card
   else
     # what if they are equal? card2 will be returned in the event of a draw
