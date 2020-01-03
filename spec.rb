@@ -2,16 +2,15 @@ require('pry')
 require('minitest/autorun')
 require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
-
-# require_relative('./card_game')
+require_relative('./card_game')
 require_relative('./card')
 
 class TestCardGame < Minitest::Test
-
   def setup
     @card1 = Card.new("clubs", 3)
     @card2 = Card.new("hearts", 13)
     @card3 = Card.new("diamonds", 1)
+    @cards = [@card1, @card2, @card3]
   end
 
   def test_card_has_suit
@@ -30,4 +29,7 @@ class TestCardGame < Minitest::Test
     assert_equal(@card2, highest_card(@card1, @card2))
   end
 
+  def test_cards_total
+    assert_equal(17, cards_total(@cards))
+  end
 end
