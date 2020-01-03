@@ -7,6 +7,7 @@
 class CardGame
 
 # naming of method should be snake case - check_for_ace
+# this method and highest_card should be class methods rather than instance methods
   def checkforAce(card)
     # this is assigning a value, should be card.value == 1
     if card.value = 1
@@ -30,7 +31,6 @@ class CardGame
 end
 end
 
-# self is unnecessary
 def self.cards_total(cards)
   # uninitialised variable - should be total = 0
   total
